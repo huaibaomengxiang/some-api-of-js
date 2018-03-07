@@ -53,6 +53,16 @@ var reg = /^.*MSIE [5-8](?:\\.[0-9]+)?(?!.*Trident\\\/[5-9]\\.0).*$/;
 //抽取注释
 var reg = /<!--(.*?)-->/;
 
+//复制到粘贴板
+//需要用到 clipboard.js
+var tip=document.getElementById('jsTips');
+var clipboard = new ClipboardJS('.copy');
+clipboard.on('success', function(e) {
+    tip.style.display='block';
+    setTimeout(function(){
+        tip.style.display='none';
+    },800);
+});
 
 
 
